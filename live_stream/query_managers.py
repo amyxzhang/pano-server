@@ -297,7 +297,7 @@ def group_history(history, req_user, self_profile=False):
 
         j = i + 1
         while j < len(history):
-            if group.domain == history[j].domain \
+            if group.url == history[j].url \
                     and group.user == history[j].user:
                 if not self_profile and req_user.is_authenticated():
                     url = history[j].url
@@ -341,7 +341,7 @@ class GroupHistory(object):
 
     def __init__(self, history_item, req_user):
         self.id = history_item.id
-        self.domain = history_item.domain
+        self.url = history_item.url
         self.tag = None
         self.visited = False
 
