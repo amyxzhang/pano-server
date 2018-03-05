@@ -96,6 +96,8 @@ class Command(NoArgsCommand):
         except:
             pass
 
+
+        p.description = p.description.decode('utf-8', 'ignore')
         p.save()
 
         return p
