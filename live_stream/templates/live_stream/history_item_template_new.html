@@ -11,6 +11,22 @@
     		{% for m in item.first_item.messages %}
     			<div class="history-message">
     				{% autoescape off %}{{ m.message|add_twitter }}{% endautoescape %}
+    				
+    				{% for t in m.tags %}
+    					<button class="btn-xs" style="background-color: {{ t.common_tag.color }}; position: relative; top: -5px; border: 0px; cursor: default;">
+		    				{{ t.common_tag.name }}</button>
+		    			{% endfor %}
+    				
+    				<BR>
+    					<div style="font-size:10px">
+    						<BR>
+		    				{% autoescape off %}{{ m.highlight.highlight|removeencode }}{% endautoescape %}
+    						<BR>
+    						{% for t in m.highlight.tags %}
+		    					<button class="btn-xs" style="background-color: {{ t.common_tag.color }}; font-size: 10px; border: 0px; cursor: default;">
+		    						{{ t.common_tag.name }}</button>
+		    				{% endfor %}
+    					</div>
     			</div>
     		{% endfor %}
     	</span>
@@ -70,14 +86,14 @@
 					    		<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#deleteModalDomain" data-url="{{ item.first_item.url }}">
 					    	{% endif %}
 					    			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-					    			Delete visits to this page from the Eyebrowse history
+					    			Delete your notes on this page from Pano's history
 								</a>
 							
 					    </li>
 					    <li role="presentation">
 					    		<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#deleteModalDomain" data-domain="{{ item.domain }}">
 					    			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-					    			Delete ALL visits to this domain from the Eyebrowse history
+					    			Delete ALL your notes from this domain from Pano's history
 								</a>
 					    </li>
 					    {% endif %}
@@ -100,6 +116,23 @@
 		    		{% for m in h_item.messages %}
 		    			<div class="history-message2">
 		    				{% autoescape off %}{{ m.message|add_twitter }}{% endautoescape %}
+		    				
+		    				{% for t in m.tags %}
+    					<button class="btn-xs" style="background-color: {{ t.common_tag.color }}; position: relative; top: -5px; border: 0px; cursor: default;">
+		    				{{ t.common_tag.name }}</button>
+		    			{% endfor %}
+    				
+    				<BR>
+    					<div style="font-size:10px">
+    						<BR>
+		    				{% autoescape off %}{{ m.highlight.highlight|removeencode }}{% endautoescape %}
+    						<BR>
+    						{% for t in m.highlight.tags %}
+		    					<button class="btn-xs" style="background-color: {{ t.common_tag.color }}; font-size: 10px; border: 0px; cursor: default;">
+		    						{{ t.common_tag.name }}</button>
+		    				{% endfor %}
+    					</div>
+		    				
 		    			</div>
 		    		{% endfor %}
 		    	</span>

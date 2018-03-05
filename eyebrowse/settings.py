@@ -46,7 +46,7 @@ except IOError:
     print "Unable to open configuration file!"
 
 if ENV == 'prod':
-    BASE_URL = 'http://eyebrowse.csail.mit.edu'
+    BASE_URL = 'https://pano.csail.mit.edu'
     DB_CONF = DB_CONF_PROD
 else:
     BASE_URL = 'http://localhost:8000'

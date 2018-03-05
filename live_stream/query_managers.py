@@ -55,6 +55,14 @@ def live_stream_query_manager(get_dict, req_user, return_type="html", empty_sear
     else:
         following = set([])
 
+    if hist_type == 'popularhistory':
+        for history_item in history:
+            history_item.mess = list(history_item.messages.all())
+            for message in history_item.mess:
+                if message.highlight:
+                    message.highlight.tags = list(message.highlight.tag_set.all())
+                message.tags = list(message.tag_set.all())
+
     if hist_type == "eyehistory" and hasattr(history, 'object_list'):
         self_profile = False
         if search_params.get('username') == req_user.username:
@@ -134,6 +142,7 @@ def history_search(req_user, timestamp=None,
 
             if limit:
                 history = history[:limit]
+                    
 
             hist_type = "popularhistory"
 
@@ -348,6 +357,10 @@ class GroupHistory(object):
 
     def add_item(self, history_item):
         history_item.messages = list(history_item.eyehistorymessage_set.all())
+        for message in history_item.messages:
+            if message.highlight:
+                message.highlight.tags = list(message.highlight.tag_set.all())
+            message.tags = list(message.tag_set.all())
         self.history_items.append(history_item)
 
     def get_items(self):

@@ -358,7 +358,7 @@ class EyeHistoryResource(ModelResource):
             start_time = datetime.datetime.strptime(
                 start_time, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=pytz.utc)
         else:
-            end_time = datetime.datetime.now().replace(tzinfo=pytz.utc)
+            end_time = datetime.datetime.now().replace(tzinfo=pytz.utc) + datetime.timedelta(minutes=2)
             start_time = datetime.datetime.now().replace(tzinfo=pytz.utc)
 
         message = bundle.data.get('message')

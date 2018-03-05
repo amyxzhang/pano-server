@@ -24,6 +24,7 @@
 			            	</h4>
 		            	</a>
                 	{{ item.popular_history.description|truncatechars:300 }} 
+                
             	</div>
             	
             </a>
@@ -51,7 +52,7 @@
 					    <li role="presentation">
 				    		<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#muteModal" data-title="{{ item.popular_history.title }}" data-domain="{{ item.popular_history.domain }}" data-url="{{ item.popular_history.url }}">
 				    			<span class="glyphicon glyphicon-volume-off" aria-hidden="true"></span>
-				    			Mute items like this from my feeds
+				    			Mute items like this from my feed
 					    	</a>
 					    </li>
 				  </ul>
@@ -90,19 +91,16 @@
     
     {% if messages|length > 0 %}
     <div class="span7">
-    		<a data-toggle="collapse" data-target="#message_details_{{ item.id }}" class="pointer">
-    			<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-    			
+    		
     			{{ messages|length }} 
     			{% if messages|length == 1 %}
     				note
     			{% else %}
     				notes
     			{% endif %}
-    		</a>
     </div>
     
-    <div class="collapse span7" id="message_details_{{ item.id }}">
+    <div class="span7" id="message_details_{{ item.id }}">
     		{% for m in messages %}
 	            <span class="span5">
 		    		<a href="/users/{{ m.eyehistory.user.username }}">
@@ -110,6 +108,21 @@
 	           		</a>
     				
     				{% autoescape off %}{{ m.message|add_twitter }}{% endautoescape %}
+    				
+    				{% for t in m.tags %}
+    					<button class="btn-xs" style="background-color: {{ t.common_tag.color }}; border: 0px; cursor: default;">
+		    				{{ t.common_tag.name }}</button>
+		    		{% endfor %}
+    					<div style="font-size:10px; padding-left: 25px;">
+    						
+		    				{% autoescape off %}{{ m.highlight.highlight|removeencode }}{% endautoescape %}
+    						<BR>
+    						{% for t in m.highlight.tags %}
+		    					<button class="btn-xs" style="background-color: {{ t.common_tag.color }}; font-size: 10px; border: 0px; cursor: default;">
+		    						{{ t.common_tag.name }}</button>
+		    				{% endfor %}
+    					</div>
+    					<BR>
 
 		    	</span>
 	        	

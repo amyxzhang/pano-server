@@ -293,14 +293,14 @@ class Command(NoArgsCommand):
         # had been to that page. This means the popularhistory is
         # stale (all visits are from over 10 weeks ago) so we delete
         self.log('deleting total pop')
-        p = PopularHistory.objects.filter(total_time_ago=0)
-        self.log('count %s' % p.count())
-        p.delete()
+#         p = PopularHistory.objects.filter(total_time_ago=0)
+#         self.log('count %s' % p.count())
+#         p.delete()
 
-        self.log('deleting total spent should be 0')
-        p = PopularHistory.objects.filter(total_time_spent=0)
-        self.log('count %s' % p.count())
-        p.delete()
+        #self.log('deleting total spent should be 0')
+        #p = PopularHistory.objects.filter(total_time_spent=0)
+        #self.log('count %s' % p.count())
+        #p.delete()
 
     def _calculate_scores(self, user=None):
         self.log('_calculate_scores')
