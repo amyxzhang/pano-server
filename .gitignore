@@ -8,6 +8,6 @@ venv
 venv26
 *.db
 config.py
-config.py-bak
+config.py-backup
 .project
 .pydevproject

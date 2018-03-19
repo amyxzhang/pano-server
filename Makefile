@@ -37,7 +37,7 @@ env:
 
 config:
 	if [ -s config.py ]; then \
-		cp config.py config.py-bak; \
+		cp config.py config.py-backup; \
 	else \
 		touch config.py && cp config_template.py config.py; \
 	fi;
