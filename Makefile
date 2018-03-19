@@ -3,7 +3,7 @@
 root_path="/opt/eyebrowse"
 env_path="$(ROOT_PATH)/env"
 debug_path="$(ROOT_PATH)/debug"
-log_path="/var/opt/eyebrowse/logs/"
+log_path="/var/opt/eyebrowse/logs"
 
 ifndef env
 	env=dev
@@ -36,6 +36,7 @@ env:
 	echo $(debug) | sudo tee $(debug_path) > /dev/null
 
 config:
+	touch config.py 
 	mv config.py config.py-bak 2>/dev/null # save a copy just in case
 	cp config_template.py config.py
 	git checkout config_template.py # reset the template
