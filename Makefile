@@ -36,9 +36,11 @@ env:
 	echo $(debug) | sudo tee $(debug_path) > /dev/null
 
 config:
-	touch config.py 
-	mv config.py config.py-bak 2>/dev/null # save a copy just in case
-	cp config_template.py config.py
+	if [ -s config.py ]; then \
+		cp config.py config.py-bak; \
+	else \
+		touch config.py && cp config_template.py config.py; \
+	fi;
 	git checkout config_template.py # reset the template
 
 db:
