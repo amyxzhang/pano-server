@@ -1,8 +1,8 @@
 .PHONY: run clean requirements env config install pylint jslint lint shell db deploy log test
 
 root_path="/opt/eyebrowse"
-env_path="$(ROOT_PATH)/env"
-debug_path="$(ROOT_PATH)/debug"
+env_path=$(root_path)/env
+debug_path=$(root_path)/debug
 log_path="/var/opt/eyebrowse/logs"
 
 ifndef env
