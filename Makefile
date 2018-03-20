@@ -27,8 +27,10 @@ requirements:
 	pip install -r requirements.txt
 
 log:
+	sudo rm -rf $(log_path)
 	sudo mkdir -p $(log_path)
 	sudo touch $(log_path)/eyebrowse.log
+	sudo chmod -R a+rw $(log_path)
 
 env:
 	sudo mkdir -p $(root_path)
