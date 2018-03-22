@@ -13,12 +13,12 @@ class Migration(SchemaMigration):
 
         # Adding field 'Notification.recipient'
         db.add_column('notifications_notification', 'recipient',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=None, related_name=u'notification_recipient', to=orm['auth.User']),
+                      self.gf('django.db.models.fields.related.ForeignKey')(default='', related_name=u'notification_recipient', to=orm['auth.User']),
                       keep_default=False)
 
         # Adding field 'Notification.sender'
         db.add_column('notifications_notification', 'sender',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=None, related_name=u'notification_sender', to=orm['auth.User']),
+                      self.gf('django.db.models.fields.related.ForeignKey')(default='', related_name=u'notification_sender', to=orm['auth.User']),
                       keep_default=False)
 
         # Adding field 'Notification.date_created'

@@ -7,6 +7,7 @@ SECRET_KEY = ''
 
 # ####### DB_CONF #########
 DB_CONF_PROD = {
+    'TYPE': '',
     'NAME': '',
     'USER': '',
     'PASSWORD': '',
@@ -14,6 +15,7 @@ DB_CONF_PROD = {
 }
 
 DB_CONF_LOCAL = {
+    'TYPE': '', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
     'NAME': '',
     'USER': '',
     'PASSWORD': '',

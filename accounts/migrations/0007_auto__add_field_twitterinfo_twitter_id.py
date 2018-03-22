@@ -10,7 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding field 'TwitterInfo.twitter_id'
         db.add_column('accounts_twitterinfo', 'twitter_id',
-                      self.gf('django.db.models.fields.IntegerField')(default=None),
+                      self.gf('django.db.models.fields.IntegerField')(default=0),
                       keep_default=False)
 
 
