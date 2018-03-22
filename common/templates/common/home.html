@@ -103,6 +103,7 @@
 
 			    <div class="container">
 			      <div class="ui secondary inverted right menu" id="nav">
+			      	<div class="toc item" style="margin-left: 50px;"><img src="{% static 'common/img/pano-logo-transparent.png' %}"></img></div>
 			      	<div class="right menu">
 				        <a class="item" href="{% url django.contrib.auth.views.login %}">Login</a>
 				        <a class="item" href="/accounts/register/">Register</a>
@@ -139,8 +140,7 @@
 		      <div class="row">
 		        <div class="eight wide column">
 		          <h2>How Pano works</h2>
-		          <h5>Pano places commenting and discussion front and center.</h5>
-							<h5>You can highlight text in any article to trigger an interface where you can tag the moral frames present in the text. You can also leave a comment simultaneously, and tag the comment with what moral frames you are speaking from.</h5>
+		          <h5>Pano places commenting and discussion front and center. While reading an article, highlight text you wish to annotate.</h5>
 		        </div>
 		        <div class="eight wide column">
 		        	<div id="pano-highlight"></div>
@@ -148,7 +148,9 @@
 		      </div>
 		      <div class="row">
 		      	<div class="eight wide column"><div id="pano-slide"></div></div>
-		      	<div class="eight wide column"><h5>Afterwards, other people who wish to respond to your comment on that annotation or leave their own thoughts must demonstrate that they also understand and have examined the moral framing in that annotation - they must contribute to the tagging on that annotation by either upvoting existing tags, or adding tags they believe are missing. Only after providing such a contribution is the commenting feature unlocked.</h5></div>
+		      	<div class="eight wide column">
+		      		<h5>Highlighting text will trigger an interface where you can tag the moral frames present in the text. You can also leave a comment simultaneously, and tag the comment with what moral frames you are speaking from.</h5>
+		      		<h5>Afterwards, other people who wish to respond to your comment on that annotation or leave their own thoughts must demonstrate that they also understand and have examined the moral framing in that annotation - they must contribute to the tagging on that annotation by either upvoting existing tags, or adding tags they believe are missing. Only after providing such a contribution is the commenting feature unlocked.</h5></div>
 		      </div>
 		    </div>
 
@@ -156,6 +158,7 @@
 		      <div class="row">
 		      	<div class="two wide column"></div>
 		        <div class="twelve wide column">
+		        	<div class="divider"></div>
 		          <h2>What is the motivation behind Pano?</h2>
 							<h5>News is crucial for our education about the world around us. News creates connections to the human experiences of others, to blessings and sufferings alike. However, as sources of news increasingly transition into the digital world, people find themselves surrounded by content specifically tailored to them and their preferences. As a result, echo chambers - places where the same, one-sided sentiments and perspectives are resonated among a community - have enveloped our online spaces, and furthered rifts between ideologies. People are deprived of exposure to diverse news content; however, diversity in news consumption is important for more informed societies, healthier democracies, and a more solid understanding of our own beliefs.In today's political climate, helping people break their echo chambers is especially relevant.</h5>
 
@@ -167,10 +170,12 @@
 		      </div>
 		    </div>
 
+		    
 		    <div class="ui stackable grid container" id="motivation">
 		      <div class="row">
 		      	<div class="two wide column"></div>
 		        <div class="twelve wide column">
+		        	<div class="divider"></div>
 		          <h2>What is moral framing and Moral Foundations?</h2>
 							<h5>Pano's use of moral framing draws from Moral Foundations Theory, a theory stating that human moral thought is based upon five fundamental psychological foundations that are found across humanity. These five foundations are:</h5>
 
@@ -204,6 +209,7 @@
 		      <div class="row">
 		      	<div class="two wide column"></div>
 		        <div class="twelve wide column">
+		        	<div class="divider"></div>
 		          <h2>Why should we care about moral framing?</h2>
 							<h5>People from one side can be swayed to support arguments from the other side if the arguments are framed using the moral foundations they care about. For instance, researchers in the past have taken a traditionally conservative argument framed in terms of loyalty ("English should be the official language of the U.S. because it unites Americans and is a fundamental part of a larger cultural assimilation process") then re-framed it using a liberal moral value of fairness ("making English the official language of the United States would compel immigrants to learn the language, leading them in turn to face better job prospects and less discrimination"). The re-framed statement was found to be uniquely persuasive to both liberals as well as those who simply highly valued fairness. Differences in underlying moral foundations may be key to understanding why arguments framed in the moral values of one side may fall on deaf ears when presented to the opposing side.</h5>
 		        </div>
